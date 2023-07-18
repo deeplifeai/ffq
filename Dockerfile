@@ -13,6 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the package files to the working directory
 COPY . .
 
+# Install the procps package to make 'ps' command available
+RUN apt-get update && apt-get install -y procps
+
 # Install the 'ffq' Python package
 RUN pip install .
 
